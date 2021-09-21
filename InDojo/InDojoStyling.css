@@ -1,0 +1,335 @@
+
+@font-face {
+  font-family: "AzoSans-Regular";
+  src: url("/fonts/AzoSans-Regular.otf") format("opentype")
+}
+
+@font-face {
+  font-family: "AzoSans-Medium";
+  src: url("/fonts/AzoSans-Medium.otf") format("opentype")
+}
+
+@font-face {
+  font-family: "AzoSans-Black";
+  src: url("/fonts/AzoSans-Black.otf") format("opentype")
+}
+
+@font-face {
+  font-family: "AzoSans-Bold";
+  src: url("/fonts/AzoSans-Bold.otf") format("opentype")
+}
+
+.bg {
+  font-family: "AzoSans-Regular", Helvetica, sans-serif;
+  color: #2d2e2d;
+
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("/images/bg.svg");
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+  background-color: #2f8fbd;
+  transition: background-color 0.2s ease-in-out;
+}
+.bg.red {
+  background-color: #d9534f;
+}
+.bg.green {
+  background-color: #55a546;
+}
+.bg.blue {
+  background-color: #2f8fbd;
+}
+
+.time-header {
+  font-family: "AzoSans-Bold";
+  padding-top: 30px;
+  background-color: #fff;
+}
+
+.curve-shape-t {
+  position: relative;
+  top: -10px;
+}
+
+.active-students {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+.active-students .student-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  padding-left: 1em;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  color: #666;
+  width: 32%;
+  height: 80px;
+}
+
+.active-students .student-card img {
+  margin-right: 1em;
+}
+
+.active-students .student-card .student-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 1em;
+}
+
+.active-students .student-card .student-info .name {
+  font-size: 0.9em;
+}
+
+.active-students .student-card .student-info .time {
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.active-students .student-card .remove {
+  font-size: 1.2em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.active-students .student-card.red {
+  -webkit-animation: red 1s infinite;
+  -moz-animation: red 1s infinite;
+  animation: red 1s infinite;
+}
+
+.active-students .student-card.yellow {
+  border-bottom: 8px solid #f0ad4e;
+}
+
+.active-students .student-card.green {
+  border-bottom: 8px solid #55a546;
+}
+@keyframes red {
+  0% {
+    border-bottom: 8px solid #fc6a60;
+  }
+  100% {
+    border-bottom: 8px solid #d50000;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.s-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 420px;
+  margin: 10px;
+  position: relative;
+}
+
+.s-card-container.red1 {
+  animation: shake 0.5s;
+}
+
+.s-card-container .s-card-close {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #bd0505;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  color: #fff;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.s-card-container .s-card-close span {
+  margin-top: 2px;
+}
+
+.s-card-container .s-card {
+  display: flex;
+  justify-content: space-around;
+  color: #506690;
+  background-color: #fff;
+  width: 100%;
+  min-height: 90px;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 0 5px 2px rgba(68, 68, 68, 0.15);
+}
+
+.s-card-container .s-card .s-card-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px 0 10px;
+  font-family: 'AzoSans-Bold';
+}
+
+.s-card-container .s-card .s-card-name span {
+  color: #506690;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.s-card-container .s-card .s-card-name span.time {
+  font-size: 20px;
+}
+
+.s-card-container .s-card .s-card-timer {
+  display: flex;
+  color: #506690;
+  font-family: 'AzoSans-Black';
+  font-size: 60px;
+  font-weight: 900;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 10px;
+}
+
+.s-card-container .s-card .s-card-timer.red {
+  color: #bd0505;
+}
+
+.s-card-container .s-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1039;
+  color: #506690;
+  width: 400px;
+  height: 70px;
+  padding: 15px;
+  z-index: -1;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  color: #fff;
+  font-size: 1.1em;
+  font-family: 'AzoSans-Bold';
+  clip-path: polygon(
+    0% 20px,
+    0 0%,
+    calc(100% - 0) 0%,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0 calc(100% - 0)
+  );
+}
+
+.s-card-container .s-card-footer.red {
+  background-color: #bd0505;
+}
+
+.s-card-container .s-card-footer.jr {
+  background-color: #502670;
+}
+
+.s-card-container .s-card-footer.jr.red {
+  background-color: #bd0505;
+}
+
+.s-card-container .s-card-footer .break {
+  flex-basis: 100%;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.text-danger {
+    color: #ea3324 !important;
+}
+
+.bg-danger {
+    background-color: #ea3324 !important;
+}
+
+.bottom-right {
+  position: absolute;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  bottom: 0;
+  right: 0;
+}
+
+.right{
+  position: absolute;
+  margin-right: 10%;
+  right: 0;
+}
+.left{
+  position: absolute;
+  margin-left: 12.5%;
+  left: 0; 
+}
+
+.massive-text{
+  font-size: large;
+}
+.centered {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
